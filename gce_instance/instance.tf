@@ -10,7 +10,7 @@ resource "google_compute_instance" "overleaf" {
 
   boot_disk {
     initialize_params {
-      image = "sharelatex/sharelatex"
+      image = "ubuntu-1804-bionic-v20230605"
     }
   }
 }
