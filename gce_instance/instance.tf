@@ -1,6 +1,6 @@
 data "google_compute_image" "cos" {
   family = "cos-stable"
-  project = var.project_id
+  project = "cos-cloud"
 }
 
 resource "google_compute_instance" "overleaf" {
