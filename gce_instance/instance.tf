@@ -11,6 +11,9 @@ resource "google_compute_instance" "overleaf" {
 
   network_interface {
     network = "default"
+    access_config {
+      network_tier = "PREMIUM"
+    }
   }
 
   boot_disk {
@@ -25,10 +28,6 @@ resource "google_compute_instance" "overleaf" {
 
   labels = {
     goog-ccm = "true"
-  }
-
-  access_config {
-    network_tier = "PREMIUM"
   }
 
   service_account {
