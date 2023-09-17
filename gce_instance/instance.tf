@@ -1,5 +1,5 @@
 data "google_compute_image" "cos" {
-  family = "cos-stable"
+  family  = "cos-stable"
   project = "cos-cloud"
 }
 
@@ -25,5 +25,22 @@ resource "google_compute_instance" "overleaf" {
 
   labels = {
     goog-ccm = "true"
+  }
+
+  access_config {
+    network_tier = "PREMIUM"
+  }
+
+  service_account {
+    email = "205083995707-compute@developer.gserviceaccount.com"
+    scopes = [
+      "https://www.googleapis.com/auth/devstorage.read_only",
+      "https://www.googleapis.com/auth/logging.write",
+      "https://www.googleapis.com/auth/monitoring.write",
+      "https://www.googleapis.com/auth/pubsub",
+      "https://www.googleapis.com/auth/service.management.readonly",
+      "https://www.googleapis.com/auth/servicecontrol",
+      "https://www.googleapis.com/auth/trace.append"
+    ]
   }
 }
