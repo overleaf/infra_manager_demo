@@ -1,3 +1,8 @@
+data "google_compute_image" "cos" {
+  family = "cos-stable"
+  project = var.project_id
+}
+
 resource "google_compute_instance" "overleaf" {
   name         = "overleaf"
   machine_type = "e2-medium"
@@ -10,7 +15,11 @@ resource "google_compute_instance" "overleaf" {
 
   boot_disk {
     initialize_params {
-      image = "ubuntu-1804-bionic-v20230605"
+      image = data.google_compute_image.cos.self_link
     }
+  }
+
+  metadata = {
+    gce-container-declaration = yamldecode(file("container.yaml"))
   }
 }
