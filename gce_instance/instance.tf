@@ -22,4 +22,8 @@ resource "google_compute_instance" "overleaf" {
   metadata = {
     gce-container-declaration = file("container.yaml")
   }
+
+  labels = {
+    goog-ccm = "true"
+  }
 }
