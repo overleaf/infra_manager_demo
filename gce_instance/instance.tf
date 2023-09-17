@@ -27,7 +27,7 @@ resource "google_compute_instance" "overleaf" {
   }
 
   labels = {
-    goog-ccm = "true"
+    container-vm = "cos-stable-105-17412-156-49"
   }
 
   service_account {
