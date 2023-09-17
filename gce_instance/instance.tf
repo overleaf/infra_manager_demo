@@ -1,6 +1,7 @@
 resource "google_compute_instance" "overleaf" {
   name         = "overleaf"
   machine_type = "e2-medium"
+  project = var.project_id
 
   network_interface {
     network = "default"
