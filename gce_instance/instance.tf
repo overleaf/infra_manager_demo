@@ -20,6 +20,6 @@ resource "google_compute_instance" "overleaf" {
   }
 
   metadata = {
-    gce-container-declaration = yamldecode(file("container.yaml"))
+    gce-container-declaration = file("container.yaml")
   }
 }
