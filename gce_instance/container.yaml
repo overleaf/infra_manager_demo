@@ -1,16 +1,21 @@
-    spec:
-      containers:
-        - image: sharelatex/sharelatex:latest
-          name: sharelatex
-          securityContext:
-            privileged: false
-          env:
-            - name: foo
-              value: bar
-            - name: meh
-              value: spam
-          stdin: false
-          tty: false
-          volumeMounts: []
-          restartPolicy: Always
-          volumes: []
+# DISCLAIMER:
+# This container declaration format is not a public API and may change without
+# notice. Please use gcloud command-line tool or Google Cloud Console to run
+# Containers on Google Compute Engine.
+
+spec:
+  containers:
+    - image: sharelatex/sharelatex:latest
+      name: sharelatex
+      securityContext:
+        privileged: false
+      env:
+        - name: foo
+          value: bar
+        - name: meh
+          value: spam
+      stdin: false
+      tty: false
+      volumeMounts: []
+    restartPolicy: Always
+    volumes: []
