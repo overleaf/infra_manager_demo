@@ -7,7 +7,8 @@ This repo needs to be public, as it appears Infrastructure Manager doesn't curre
 ```
 export PROJECT_ID=...
 export ACCOUNT_ID=...
-gcloud projects create $PROJECT_ID  --folder=119554642474
+export FOLDER_ID=...
+gcloud projects create $PROJECT_ID  --folder=$FOLDER_ID
 gcloud billing projects link $PROJECT_ID --billing-account=$ACCOUNT_ID
 gcloud --project  $PROJECT_ID services enable config.googleapis.com
 
