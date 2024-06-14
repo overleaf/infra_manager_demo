@@ -1,6 +1,7 @@
 resource "google_compute_instance" "default" {
   name         = "csh-test-1"
   machine_type = "n2-standard-2"
+  zone = "us-east1-b"
 
   boot_disk {
     initialize_params {
